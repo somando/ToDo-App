@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    volumes:
+      - type: bind
+        source: .
+        target: /var/www/html
+    ports:
+      - 8080:80
+
+  db:
+    image: mariadb
+    ports:
+      - 3306:3306
+    volumes:
+      - type: volume
+        source: mariadb-data
+        target: /var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+  
+  ubuntu:
+    build:
+      context: .
+      dockerfile: docker/ubuntu/Dockerfile
+    tty: true
+
+volumes:
+  mariadb-data:
