@@ -1,0 +1,281 @@
+body, button {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+header {
+  background-color: #DDDDDD;
+  padding: 20px 20px;
+}
+
+.welcome {
+  text-align: right;
+}
+
+.alert-bar, .alert-bar a {
+  background-color: #FFCCCC;
+  color: #ff4040;
+}
+
+.alert-bar::before {
+  background-image: url("img/triangle-exclamation-solid.svg");
+}
+
+main {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+a {
+  color: black;
+}
+
+.app-title {
+  margin: 10px auto;
+}
+
+.app-title a {
+  text-decoration: none;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.members-container {
+  display: grid;
+  grid-template-columns: 1fr 30px;
+}
+
+.members-container p {
+  margin: 5px 0;
+}
+
+.delete-member-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container {
+  padding: 0 10px;
+}
+
+.task-container, .folder-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.container {
+  margin: 40px 0;
+}
+
+.content-block {
+  background-color: #DDDDDD;
+  padding: 20px;
+}
+
+.account-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.add-member-form {
+  width: 100%;
+}
+
+input:not([type="checkbox"]), textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #BBBBBB;
+  border-radius: 5px;
+}
+
+.center {
+  text-align: center;
+}
+
+.assign-userid {
+  margin-left: 10px;
+  vertical-align: top;
+}
+
+button {
+  background-color: #DDDDDD;
+  border: 1px solid #BBBBBB;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+
+.form-label-user::before, .form-label-password::before, .have-account::before, 
+.do-not-have-account::before, .form-label-folder::before, .tasks-folder-name::before,
+.task-item::before, .folder-item::before, .tag-item::before, .add-item::before,
+.alert-bar::before, .form-label-description::before, .form-label-tag::before,
+.form-label-task::before, .form-label-users::before, .item-edit::before, 
+.item-delete::before, .task-status::before, .task-status-submit::before,
+.task-title::before, .folder-title::before, .folder-task-item::before,
+.item-member::before, .add-member::before, .delete-member-submit::before {
+  content: '';
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.form-label-user::before {
+  background-image: url("img/user-solid.svg");
+}
+
+.form-label-users::before, .item-member::before {
+  background-image: url("img/users-solid.svg");
+}
+
+.form-label-password::before {
+  background-image: url("img/lock-solid.svg");
+}
+
+.have-account::before {
+  background-image: url("img/user-check-solid.svg");
+}
+
+.do-not-have-account::before {
+  background-image: url("img/user-xmark-solid.svg");
+}
+
+.tasks-folder {
+  margin-bottom: 30px;
+}
+
+.tasks-folder:last-child {
+  margin-bottom: 7px;
+}
+
+.tasks-folder-name {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.folder-item::before, .tasks-folder-name::before, .form-label-folder::before, .folder-title::before {
+  background-image: url("img/folder-solid.svg");
+}
+
+.task-item, .tasks-folder .add-item {
+  margin-left: 28px;
+}
+
+.task-item::before, .form-label-task::before, .task-title::before {
+  background-image: url("img/check-solid.svg");
+}
+
+.folder-task-item-not-done::before {
+  background-image: url("img/circle-xmark-regular.svg");
+}
+
+.tag-item::before, .form-label-tag::before {
+  background-image: url("img/tag-solid.svg");
+}
+
+.add-item::before {
+  background-image: url("img/plus-solid.svg");
+}
+
+.form-label-description::before {
+  background-image: url("img/align-justify-solid.svg");
+}
+
+.task-status, .folder-sub-title {
+  font-size: 16px;
+}
+
+.task-finish::before, .task-status-submit-completed::before, .folder-task-item-done::before {
+  background-image: url("img/circle-check-regular.svg");
+}
+
+.task-no-finish::before, .task-status-submit-not-completed::before {
+  background-image: url("img/circle-xmark-regular.svg");
+}
+
+.task-status-submit, .item-add, .item-edit, .item-delete, .item-member {
+  margin-right: 10px;
+}
+
+.item-edit::before {
+  background-image: url("img/pen-to-square-solid.svg");
+}
+
+.item-delete {
+  color: #ff4040;
+}
+
+.item-delete::before, .delete-member-submit::before {
+  background-image: url("img/trash-solid.svg");
+}
+
+.link-form {
+  display: inline-block;
+}
+
+.folder-task {
+  margin-top: 30px;
+}
+
+.item-menu {
+  width: 100%;
+}
+
+.item-menu p {
+  width: fit-content;
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.add-member::before {
+  background-image: url("img/user-plus-solid.svg");
+}
+
+@media screen and (max-width: 600px) {
+  .main-container {
+    display: block;
+  }
+}
+
+@font-face {
+  font-family: 'Zen Kaku Gothic New';
+  src: url('fonts/ZenKakuGothicNew-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-VariableFont_wght.ttf');
+  font-weight: 100;
+  font-style: normal;
+}

@@ -1,7 +1,6 @@
-version: '3'
-
 services:
   app:
+    container_name: todo-app
     build:
       context: .
       dockerfile: docker/app/Dockerfile
@@ -13,6 +12,7 @@ services:
       - 8080:80
 
   db:
+    container_name: todo-db
     image: mariadb
     ports:
       - 3306:3306
@@ -22,8 +22,9 @@ services:
         target: /var/lib/mysql
     environment:
       MARIADB_ROOT_PASSWORD: root
-  
+
   ubuntu:
+    container_name: todo-ubuntu
     build:
       context: .
       dockerfile: docker/ubuntu/Dockerfile

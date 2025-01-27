@@ -13,6 +13,5 @@
       $params["secure"], $params["httponly"]
     );
   }
-  // sleep(2);
   header('Location: /');
   exit();
