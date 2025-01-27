@@ -9,7 +9,9 @@
     $description = $_POST['description'];
     $folder_id = $_POST['folder_id'];
     $user_id = $_SESSION['user_id'];
-    $assigns = $_POST['assigns'];
+    if (isset($_POST['assigns'])) {
+      $assigns = $_POST['assigns'];
+    }
 
     if ($title === '' || $folder_id === '') {
       echo '<h1 class="app-title"><a href="/">ToDo List</a></h1>';
@@ -26,7 +28,7 @@
         $task = $stmt->fetch();
       }
       $task_id = $pdo->lastInsertId();
-      if ($assigns) {
+      if (isset($assigns)) {
         foreach ($assigns as $assign) {
           $stmt = $pdo->prepare('INSERT INTO task_assignments (task_id, user_id) VALUES (:task_id, :user_id)');
           $stmt->execute(['task_id' => $task_id, 'user_id' => $assign]);

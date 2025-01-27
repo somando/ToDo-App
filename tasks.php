@@ -68,7 +68,10 @@
         }
         echo '      </form>';
         echo '      <a href="/tasks/edit.php?id=' . $task['id'] . '" class="item-edit">編集</a>';
-        echo '      <a href="/tasks/delete.php?id=' . $task['id'] . '" class="item-delete">削除</a>';
+        echo '      <form method="post" action="/tasks/delete.php" name="delete-item">';
+        echo '        <input type="hidden" name="id" value="' . $task['id'] . '">';
+        echo '        <a href="javascript:void(0)" class="item-delete" onclick="submitForm(\'delete-item\')">削除</a>';
+        echo '      </form>';
         echo '    </div>';
       } else {
         echo '<header class="alert-bar">タスクが見つかりません。</header>';
@@ -78,3 +81,15 @@
     }
     echo '  </div>';
   }
+?>
+
+<script>
+  function submitForm(formName) {
+    var form = document.forms[formName];
+    if (form) {
+      form.submit();
+    } else {
+      console.error('フォームが見つかりません: ' + formName);
+    }
+  }
+</script>

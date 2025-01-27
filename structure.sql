@@ -31,3 +31,9 @@ CREATE TABLE IF NOT EXISTS tasks (
   FOREIGN KEY (folder_id) REFERENCES folders(id),
   FOREIGN KEY (created_user_id) REFERENCES users(id)
 );
+
+CREATE TABLE IF NOT EXISTS task_assignments (
+  task_id INT NOT NULL,
+  user_id VARCHAR(255) NOT NULL,
+  PRIMARY KEY (user_id, task_id)
+);

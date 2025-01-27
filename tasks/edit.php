@@ -10,7 +10,9 @@
     $description = $_POST['description'];
     $folder_id = $_POST['folder_id'];
     $user_id = $_SESSION['user_id'];
-    $assigns = $_POST['assigns'];
+    if (isset($_POST['assigns'])) {
+      $assigns = $_POST['assigns'];
+    }
 
     if ($title === '' || $folder_id === '') {
       echo '<h1 class="app-title"><a href="/">ToDo List</a></h1>';
@@ -32,7 +34,7 @@
           $stmt = $pdo->prepare('UPDATE tasks SET title = :title, description = :description, folder_id = :folder_id WHERE id = :id');
           $stmt->execute(['title' => $title, 'description' => $description, 'folder_id' => $folder_id, 'id' => $_POST['id']]);
           $task = $stmt->fetch();
-          if ($assigns) {
+          if (isset($assigns)) {
             $stmt = $pdo->prepare('DELETE FROM task_assignments WHERE task_id = :task_id');
             $stmt->execute(['task_id' => $_POST['id']]);
             $task = $stmt->fetch();
